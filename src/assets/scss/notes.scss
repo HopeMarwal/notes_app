@@ -1,0 +1,150 @@
+.dark-mode {
+  height: 100vh;
+  background: rgb(60, 60, 60);
+
+  h2 {
+    color: #fff;
+  }
+}
+
+.notes {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 10px;
+
+  &-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+  }
+
+  .search {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    background: rgb(236, 236, 236);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 15px;
+
+    input {
+      background: transparent;
+      border: none;
+      outline: none;
+      flex: 1
+    }
+  }
+
+  .notes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .note-card {
+
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.5s linear;
+    min-height: 150px;
+    width: 50%;
+
+    &_container {
+      border-radius: 10px;
+      padding: 10px;
+      height: 100%;
+      background: #fff4b0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-direction: column;
+      white-space: pre-wrap;
+
+      &.new {
+        background-color: #67d7cc;
+      }
+    }
+
+    &.show {
+      opacity: 1;
+      width: 50%;
+    }
+
+    &.hide {
+      opacity: 0;
+      padding: 0;
+      width: 0;
+    }
+
+    textarea {
+      border: none;
+      resize: none;
+      background-color: #67d7cc;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+
+    &_footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .delete-icon {
+      cursor: pointer;
+      transition: all 0.2s linear;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .save_btn {
+    background-color: #e1e1e1;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: all 0.2s linear;
+
+    &:hover {
+      background-color: #ededed;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .notes {
+    .note-card {
+      width: 100%;
+      height: auto;
+      min-height: auto;
+
+      &_container {
+        height: 100%;
+      }
+
+      &.show {
+        width: 100%;
+        height: 150px;
+      }
+
+      &.hide {
+        width: 100%;
+        height: 0;
+      }
+    }
+  }
+}
